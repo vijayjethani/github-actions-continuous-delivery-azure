@@ -35,7 +35,7 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@main
         with:
-          name: webpack artifact
+          name: webpack artifacts
           path: public/
           
       - name: Create Image and store in Packages
