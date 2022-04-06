@@ -13,7 +13,6 @@ jobs:
   build:
     if: contains(github.event.pull_request.labels.*.name, 'stage')
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - uses: actions/checkout@v2
       - name: npm install and webpack build
@@ -28,6 +27,7 @@ jobs:
   build-dockerimage:
     name: build docker image and store in github packages
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: checkout
         uses: actions/checkout@v2
